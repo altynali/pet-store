@@ -1,0 +1,9 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-around;
+}

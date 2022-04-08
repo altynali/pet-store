@@ -18,8 +18,6 @@ const htmlDivProducts = document.getElementById("products");
 const htmlDivEmployees = document.getElementById("employees");
 const htmlDivCash = document.getElementById("cash");
 
-console.log(store);
-
 //filling data
 store.pet.fillArray();
 store.product.fillArray();

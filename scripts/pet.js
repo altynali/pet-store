@@ -1,3 +1,24 @@
+/**
+ * This class represents Pet. Pet class is inherited from Product class.
+ * =
+ * @param {*} kind - represents category of pet
+ * @param {*} name -  represents name of pet, it is empty, owner will change it later, if he wants to
+ * @param {*} age - represents age of pet
+ * @param {*} foodName - helps to initialize product with food category for every pet
+ * @param {*} foodPrice - helps to initialize product with food category for every pet
+ * @param {*} owner - represents owner of pet, if it has one
+ * @param {*} pets - pets array, that is encapsulated
+ *
+ * @param {*} setArrayList - setter for array of pets
+ * @param {*} getArrayList - getter for array of pets
+ * @param {*} fillArray - method for filling array of pets with some data
+ * @param {*} increment - method for increment pets
+ * @param {*} decrement - method for decrement pets
+ * @param {*} ownerFound -method for buying pet, it gives owner to pet and increment cash in store, returns value to employee
+ * @param {*} display - method for display pets array in html document
+ *
+ */
+
 import Product from "./product.js";
 
 export default class Pet extends Product {
@@ -13,6 +34,7 @@ export default class Pet extends Product {
     this.age = age;
     this.food = new Product("food", foodName, foodPrice);
     this.owner = owner;
+    var pets;
   }
 
   setArrayList(pets) {
@@ -26,17 +48,19 @@ export default class Pet extends Product {
   }
 
   fillArray() {
+    var pets = [];
+
     [4, 5, 6, 7, 8, 9].forEach((element) =>
-      this.pets.push(
+      pets.push(
         new Pet("dog", element, element + 100, "Butterscotch", element + 10)
       )
     );
 
     [1, 1, 2, 3].forEach((element) =>
-      this.pets.push(
-        new Pet("cat", element, element + 100, "Whiskas", element + 10)
-      )
+      pets.push(new Pet("cat", element, element + 100, "Whiskas", element + 10))
     );
+
+    this.setArrayList(pets);
   }
 
   increment(pet) {

@@ -11,7 +11,7 @@ export default class Employee extends Person {
   constructor(name = "", age = 0, email = "", mobile = 0, store) {
     super(name, age, email, mobile);
     this.store = store;
-    this.employees = [];
+    var employees;
   }
 
   sayHi() {
@@ -28,26 +28,25 @@ export default class Employee extends Person {
     return this.employees;
   }
 
-  fillArray(employees) {
-    if (employees) {
-      this.employees = employees;
-    } else {
-      [1, 6, 9, 8, 4, 5, 6, 7, 8].forEach((element) =>
-        this.employees.push(
-          new Employee(
-            element + "Employee",
-            element + 20,
-            element + "employee@gmail.com",
-            720500100 + element
-          )
+  fillArray() {
+    var employees = [];
+
+    [1, 6, 9, 8, 4, 5, 6, 7, 8].forEach((element) =>
+      employees.push(
+        new Employee(
+          element + "Employee",
+          element + 20,
+          element + "employee@gmail.com",
+          720500100 + element
         )
-      );
-    }
+      )
+    );
+
+    this.setArrayList(employees);
   }
 
   increment(employee) {
     this.employees.push(employee);
-    console.log(this.employees);
   }
 
   decrement(name) {

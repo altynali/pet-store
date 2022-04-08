@@ -1,11 +1,9 @@
 /**
  * This class represents Pet. Pet class is inherited from Product class.
- * =
- * @param {*} kind - represents category of pet
- * @param {*} name -  represents name of pet, it is empty, owner will change it later, if he wants to
  * @param {*} age - represents age of pet
- * @param {*} foodName - helps to initialize product with food category for every pet
- * @param {*} foodPrice - helps to initialize product with food category for every pet
+ * @param {*} price - represents price of pet
+ * @param {*} name -  represents name of pet, it is empty, owner will change it later, if he wants to
+ * @param {*} food - reference to Product class with food category for every pet
  * @param {*} owner - represents owner of pet, if it has one
  * @param {*} pets - pets array, that is encapsulated
  *
@@ -20,17 +18,18 @@
  */
 
 import Product from "./product.js";
+import { petsMock } from "./mocks.js";
 
 export default class Pet extends Product {
   constructor(
-    kind = "",
+    category = "",
     age = "",
     price = 0,
     foodName = "",
     foodPrice = 0,
     owner = ""
   ) {
-    super(kind, "", price);
+    super(category, "", price);
     this.age = age;
     this.food = new Product("food", foodName, foodPrice);
     this.owner = owner;
@@ -50,14 +49,10 @@ export default class Pet extends Product {
   fillArray() {
     var pets = [];
 
-    [4, 5, 6, 7, 8, 9].forEach((element) =>
+    petsMock.forEach((element) =>
       pets.push(
-        new Pet("dog", element, element + 100, "Butterscotch", element + 10)
+        new Pet(element.category, element.age, element.price, element.foodName)
       )
-    );
-
-    [1, 1, 2, 3].forEach((element) =>
-      pets.push(new Pet("cat", element, element + 100, "Whiskas", element + 10))
     );
 
     this.setArrayList(pets);
@@ -84,7 +79,6 @@ export default class Pet extends Product {
            age: ${element.age} <br>
            price: ${element.price} <br> 
            lovely food: ${element.food.name} <br>
-           food: ${element.food.price} <br> 
            owner: ${element.owner || "This one has no owner"} <br> <br>`
       )
       .join("");

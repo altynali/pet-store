@@ -17,6 +17,8 @@
  *
  */
 
+import { productsMock } from "./mocks.js";
+
 export default class Product {
   constructor(category = "food" || "toy", name = "", price) {
     this.id = Date.now();
@@ -38,17 +40,11 @@ export default class Product {
 
   fillArray() {
     var products = [];
-    [(1, 6)].forEach((element) =>
-      products.push(new Product("food", "Whiskas", element + 10))
+
+    productsMock.forEach((element) =>
+      products.push(new Product(element.category, element.name, element.price))
     );
 
-    [9, 8, 4].forEach((element) =>
-      products.push(new Product("food", "Pidegree", element + 10))
-    );
-
-    [5, 6, 7, 8, 9].forEach((element) =>
-      products.push(new Product("toy", "Tuffies", element + 10))
-    );
     this.setArrayList(products);
   }
 
@@ -61,7 +57,6 @@ export default class Product {
   }
 
   buyProduct(prevCash) {
-    if (!this.products) return;
     const cash = prevCash + this.price;
     return cash;
   }

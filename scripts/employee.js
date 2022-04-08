@@ -6,11 +6,13 @@
  */
 
 import Person from "./person.js";
+import { employeesMock } from "./mocks.js";
 
 export default class Employee extends Person {
-  constructor(name = "", age = 0, email = "", mobile = 0, store) {
-    super(name, age, email, mobile);
-    this.store = store;
+  constructor(name = "", role, age = 0, email = "", phoneNumber = 0) {
+    super(name, age, email, phoneNumber);
+    this.role = role;
+    var store;
     var employees;
   }
 
@@ -19,7 +21,7 @@ export default class Employee extends Person {
   }
 
   setArrayList(employees) {
-    if (!products) return;
+    if (!employees) return;
 
     this.employees = employees;
   }
@@ -28,19 +30,34 @@ export default class Employee extends Person {
     return this.employees;
   }
 
-  fillArray() {
-    var employees = [];
+  setStore(store) {
+    this.store = store;
+  }
 
-    [1, 6, 9, 8, 4, 5, 6, 7, 8].forEach((element) =>
+  getStore() {
+    return this.store;
+  }
+
+  fillArray(store) {
+    let employees = [];
+
+    employeesMock.forEach((element) =>
       employees.push(
         new Employee(
-          element + "Employee",
-          element + 20,
-          element + "employee@gmail.com",
-          720500100 + element
+          element.name,
+          element.role,
+          element.age,
+          element.email,
+          element.phoneNumber
         )
       )
     );
+
+    employees.forEach((element) => {
+      if (element.role === "cashier") {
+        element.setStore(store);
+      }
+    });
 
     this.setArrayList(employees);
   }
@@ -54,14 +71,17 @@ export default class Employee extends Person {
   }
 
   serveCustomer(product, newOwnerName) {
-    const currentCash = this.store.cash.getCash();
+    if (this.role !== "cashier") {
+      return alert(`Sorry, you're not cashier`);
+    }
+    const currentCash = this.getStore().cash.getCash();
 
     if (newOwnerName) {
       const addCash = product.ownerFound(newOwnerName, currentCash);
-      this.store.cash.setCash(addCash);
+      this.getStore().cash.setCash(addCash);
     } else {
       const addCash = product.buyProduct(currentCash);
-      this.store.cash.setCash(addCash);
+      this.getStore().cash.setCash(addCash);
     }
   }
 
@@ -72,7 +92,7 @@ export default class Employee extends Person {
           ` name: ${element.name} <br>
             age: ${element.age} <br> 
             email: ${element.email} <br>
-            mobile: ${element.mobile} <br> <br>`
+            phoneNumber: ${element.phoneNumber} <br> <br>`
       )
       .join("");
   }

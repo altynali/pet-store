@@ -1,19 +1,21 @@
 /**
  * This class represents Product.
  *
- * @param {*} id - unique identifier, generates in class itself
- * @param {*} category - represents category of product
- * @param {*} name -  represents name of product
- * @param {*} price - represents price of product
- * @param {*} products - products array, that is encapsulated
+ * @param {number} id - unique identifier, generates in class itself
+ * @param {string} category - represents category of product
+ * @param {string} name -  represents name of product
+ * @param {number} price - represents price of product
+ * @param {Array<Product>} products - products array, that is encapsulated
  *
- * @param {*} setArrayList - setter for array of products
- * @param {*} getArrayList - getter for array of products
- * @param {*} fillArray - method for filling array of products with some data
- * @param {*} increment - method for increment products
- * @param {*} decrement - method for decrement products
- * @param {*} buyProduct - method for buying something and increment cash in store, returns value to employee
- * @param {*} display - method for display products array in html document
+ * @method setArrayList - setter for array of products
+ * @method getArrayList - getter for array of products
+ * @method fillArray - method for filling array of products with some data
+ * @method increment - method for increment products
+ * @method decrement - method for decrement products
+ * @method buyProduct - method for buying something and increment cash in store, returns value to employee
+ * @method display - method for display products array in html document
+ *
+ * @returns {Object} the product object
  *
  */
 

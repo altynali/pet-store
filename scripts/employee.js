@@ -1,7 +1,21 @@
 /**
+ * This class represents Employee. Employee class is inherited from Person class.
  *
- * @param {*} store
+ * @param {string} role -  represents employee's role
+ * @param {Store} store -  represents reference of Store class
+ * @param {Array<Employee>} employees - employees array, that is encapsulated
  *
+ * @method sayHi - alerts greeting message
+ * @method setArrayList - setter for array of employees
+ * @method getArrayList - getter for array of employees
+ * @method fillArray - method for filling array of employees with some data
+ * @method increment - method for increment employees
+ * @method decrement - method for decrement employees
+ * @method serveCustomer -method for buying  something, it checks if there is name of owner and understands what is going to be bought.
+ * Also it checks if employee is cashier
+ * @method display - method for display employees array in html document
+ *
+ * @returns {Object} the employee object
  *
  */
 

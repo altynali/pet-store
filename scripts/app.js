@@ -15,6 +15,7 @@ const cashierEmployee = new Employee(
 
 cashierEmployee.setStore(store);
 
+//get html blocks
 const htmlDivPets = document.getElementById("pets");
 const htmlDivProducts = document.getElementById("products");
 const htmlDivEmployees = document.getElementById("employees");
@@ -31,6 +32,11 @@ store.employee.increment(new Employee("LLLLLL", "security", 50, "d", 50));
 store.employee
   .getArrayList()[1]
   .serveCustomer(store.pet.getArrayList()[0], "Will"); // - buying pet means pet has owner
+
+store.employee
+  .getArrayList()[2]
+  .serveCustomer(store.pet.getArrayList()[0], "Will"); // - sorry, you're not cashier
+
 cashierEmployee.serveCustomer(store.pet.getArrayList()[2], "Cal");
 cashierEmployee.serveCustomer(store.product.getArrayList()[2]);
 
@@ -39,6 +45,7 @@ store.employee
   .getArrayList()[1]
   .serveCustomer(store.pet.getArrayList()[0], "Will");
 
+//set data insight div
 htmlDivPets.innerHTML = store.displayPets();
 htmlDivProducts.innerHTML = store.displayProducts();
 htmlDivEmployees.innerHTML = store.displayEmployees();

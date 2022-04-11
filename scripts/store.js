@@ -1,16 +1,17 @@
 /**
  * This class represents Store. It helps to manage everything in store: products, pets, employees and cash.
  *
- * @param {*} product - is instance of Product class
- * @param {*} pet - is instance of Pet class
- * @param {*} employee - is instance of Employee class
- * @param {*} cash - is instance of Cash class
+ * @param {Product} product - reference of Product class
+ * @param {Pet} pet - reference of Pet class
+ * @param {Employee} employee - reference of Employee class
+ * @param {Cash} cash - reference of Cash class
  *
- * @param {*} displayProducts - Produnt class's method for display products array in html document
- * @param {*} displayPets - Pet class's method for display products array in html document
- * @param {*} displayEmployees - Employee class's method for display products array in html document
- * @param {*} displayCash - Cash class's method for display products array in html document
+ * @method displayProducts - Product class's method for display products array in html document
+ * @method displayPets - Pet class's method for display products array in html document
+ * @method displayEmployees - Employee class's method for display products array in html document
+ * @method displayCash - Cash class's method for display products array in html document
  *
+ * @returns {Object} the store object
  */
 
 import Cash from "./cash.js";

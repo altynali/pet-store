@@ -1,19 +1,20 @@
 /**
  * This class represents Pet. Pet class is inherited from Product class.
- * @param {*} age - represents age of pet
- * @param {*} price - represents price of pet
- * @param {*} name -  represents name of pet, it is empty, owner will change it later, if he wants to
- * @param {*} food - reference to Product class with food category for every pet
- * @param {*} owner - represents owner of pet, if it has one
- * @param {*} pets - pets array, that is encapsulated
  *
- * @param {*} setArrayList - setter for array of pets
- * @param {*} getArrayList - getter for array of pets
- * @param {*} fillArray - method for filling array of pets with some data
- * @param {*} increment - method for increment pets
- * @param {*} decrement - method for decrement pets
- * @param {*} ownerFound -method for buying pet, it gives owner to pet and increment cash in store, returns value to employee
- * @param {*} display - method for display pets array in html document
+ * @param {number} age - represents age of pet
+ * @param {Product} food - reference to Product class with food category for every pet, information about lovely food
+ * @param {string} owner - represents owner of pet, if it has one
+ * @param {Array<Pet>} pets - pets array, that is encapsulated
+ *
+ * @method setArrayList - setter for array of pets
+ * @method getArrayList - getter for array of pets
+ * @method fillArray - method for filling array of pets with some data
+ * @method increment - method for increment pets
+ * @method decrement - method for decrement pets
+ * @method ownerFound -method for buying pet, it gives owner to pet and increment cash in store, returns value to employee
+ * @method display - method for display pets array in html document
+ *
+ * @returns {Object} the pet object
  *
  */
 

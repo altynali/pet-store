@@ -1,13 +1,14 @@
 /**
  * This class represents Person.
  *
- * @param {*} name -  represents name
- * @param {*} age -  represents age
- * @param {*} email -  represents age
- * @param {*} phoneNumber - represents phoneNumber
+ * @param {string} name - represents name
+ * @param {number} age - represents age
+ * @param {string} email -  represents age
+ * @param {number} phoneNumber - represents phoneNumber
  *
- * @param {*} sayHi - alerts greeting message
+ * @method sayHi - alerts greeting message
  *
+ * @returns {Object} the person object
  */
 
 export default class Person {

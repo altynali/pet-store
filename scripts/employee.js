@@ -3,10 +3,10 @@
 /**
  * This class represents Employee. Employee class is inherited from Person class.
  * @class Employee
- * @extends Person
  */
 
 import Person from "./person.js";
+import Store from "./store.js";
 import { employeesMock } from "./mocks.js";
 
 export default class Employee extends Person {

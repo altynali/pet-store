@@ -8,14 +8,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "jsdoc": "^3.6.10"
+    "jsdoc": "^3.6.10",
+    "serve": "^13.0.2"
   },
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/altynali/pet-store.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/altynali/pet-store.git",
+  "author": "Altynbayeva Alina",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/altynali/pet-store/issues"

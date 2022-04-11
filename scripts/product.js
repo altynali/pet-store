@@ -15,7 +15,7 @@
  * @method buyProduct - method for buying something and increment cash in store, returns value to employee
  * @method display - method for display products array in html document
  *
- * @returns {Object} the product object
+ * @returns {Product} the product object
  *
  */
 

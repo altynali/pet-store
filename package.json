@@ -2,7 +2,8 @@
   "name": "my-package",
   "scripts": {
     "build": "babel src -d lib",
-    "test": "jest"
+    "test": "jest",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "description": "- yarn\r - http-server",
   "version": "1.0.0",

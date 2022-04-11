@@ -1,0 +1,18 @@
+{
+  "plugins": ["plugins/markdown",
+    "plugins/summarize"],
+  "source": {
+      "include": "./scripts", 
+      "includePattern": ".js$",
+      "excludePattern": "(node_modules/|docs)"
+  },
+  "templates": {
+      "cleverLinks": true,
+      "monospaceLinks": true
+  },
+  "opts": {                      
+      "destination": "./docs",          
+      "recurse": true,
+      "readme": "./readme.md"
+  }
+}

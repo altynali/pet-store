@@ -11,7 +11,7 @@
  * @method displayEmployees - Employee class's method for display products array in html document
  * @method displayCash - Cash class's method for display products array in html document
  *
- * @returns {Object} the store object
+ * @returns {Store} the store object
  */
 
 import Cash from "./cash.js";

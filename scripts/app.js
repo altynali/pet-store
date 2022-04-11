@@ -1,5 +1,8 @@
-import Store from "./store.js";
-import Employee from "./employee.js";
+import Store from "./scripts/store.js";
+import Employee from "./scripts/employee.js";
+import Cash from "./cash.js";
+import Pet from "./pet.js";
+import Product from "./product.js";
 
 //inicializing store
 const store = new Store();

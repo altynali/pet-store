@@ -8,7 +8,7 @@
  *
  * @method sayHi - alerts greeting message
  *
- * @returns {Object} the person object
+ * @returns {Person} the person object
  */
 
 export default class Person {

@@ -14,7 +14,7 @@
  * @method ownerFound -method for buying pet, it gives owner to pet and increment cash in store, returns value to employee
  * @method display - method for display pets array in html document
  *
- * @returns {Object} the pet object
+ * @returns {Pet} the pet object
  *
  */
 

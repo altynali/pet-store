@@ -1,34 +1,35 @@
 //@ts-check
 
-/**
- * This class represents Employee. Employee class is inherited from Person class.
- * @class Employee
- */
-
 import Person from "./person.js";
 import Store from "./store.js";
 import { employeesMock } from "./mocks.js";
 
+/**
+ * This class represents Employee. Employee class is inherited from Person class.
+ * @class Employee
+ * @extends Person
+ */
+
 export default class Employee extends Person {
-  /**
-   * @param {*} name
-   * @param {*} role
-   * @param {*} age
-   * @param {*} email
-   * @param {*} phoneNumber
+  /**+
+   * @param {string} name
+   * @param {string} role
+   * @param {number} age
+   * @param {string} email
+   * @param {number} phoneNumber
    */
   constructor(name = "", role, age = 0, email = "", phoneNumber = 0) {
     super(name, age, email, phoneNumber);
     /**
-     * @param {string} role -  represents employee's role
+     * @property {string} role -  represents employee's role
      */
     this.role = role;
     /**
-     * @param {Store} store -  represents reference of Store class
+     * represents reference of Store class
      */
     var store;
     /**
-     * @param {Array<Employee>} employees - employees array, that is encapsulated
+     * employees array, that is encapsulated
      */
     var employees;
   }
@@ -39,7 +40,6 @@ export default class Employee extends Person {
   sayHi() {
     return alert(`Hi! My name is ${this.name}. How can I help you?`);
   }
-
   /**
    * @property {Function} setArrayList - setter for array of employees
    * @param {*} employees
@@ -124,7 +124,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * * @property {Function} serveCustomer -method for buying  something, it checks if there is name of owner and understands what is going to be bought.
+   * @property {Function} serveCustomer -method for buying  something, it checks if there is name of owner and understands what is going to be bought.
    * Also it checks if employee is cashier
    * @param {*} product
    * @param {*} newOwnerName

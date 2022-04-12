@@ -1,10 +1,8 @@
 /**
  * This class represents Store. It helps to manage everything in store: products, pets, employees and cash.
  *
- * @param {Product} product - reference of Product class
- * @param {Pet} pet - reference of Pet class
- * @param {Employee} employee - reference of Employee class
- * @param {Cash} cash - reference of Cash class
+ * @class Store
+ *
  *
  * @method displayProducts - Product class's method for display products array in html document
  * @method displayPets - Pet class's method for display products array in html document
@@ -21,24 +19,58 @@ import Product from "./product.js";
 
 export default class Store {
   constructor() {
+    /**
+     * @property {Product} product - reference of Product class
+     */
     this.product = new Product();
+
+    /**
+     * @property {Pet} pet - reference of Pet class
+     */
     this.pet = new Pet();
+
+    /**
+     * @property {Employee} employee - reference of Employee class
+     */
     this.employee = new Employee();
+
+    /**
+     * @property {Cash} cash - reference of Cash class
+     */
     this.cash = new Cash();
   }
 
+  /**
+   * @property {Function} displayProducts - Product class's method for display products array in html document
+   * @returns display
+   */
   displayProducts() {
     return this.product.display();
   }
 
+  /**
+   *  @property {Function} displayPets - Pet class's method for display products array in html document
+   *
+   * @returns display
+   */
   displayPets() {
     return this.pet.display();
   }
 
+  /**
+   *  @property {Function} displayEmployees - Employee class's method for display products array in html document
+   *
+   * @returns display
+   */
   displayEmployees() {
     return this.employee.display();
   }
 
+  /**
+   *  @property {Function}  displayCash - Cash class's method for display products array in html document
+   *
+   * @returns display
+   */
   displayCash() {
     return this.cash.display();
   }

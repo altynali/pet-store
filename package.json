@@ -3,13 +3,14 @@
   "scripts": {
     "build": "babel src -d lib",
     "test": "jest",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "docs:build": "documentation build scripts/** -f html -o docs"
   },
   "description": "- yarn\r - http-server",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "jsdoc": "^3.6.10",
+    "documentation": "^13.2.5",
     "serve": "^13.0.2"
   },
   "devDependencies": {},

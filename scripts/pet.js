@@ -1,52 +1,74 @@
-/**
- * This class represents Pet. Pet class is inherited from Product class.
- *
- * @param {number} age - represents age of pet
- * @param {Product} food - reference to Product class with food category for every pet, information about lovely food
- * @param {string} owner - represents owner of pet, if it has one
- * @param {Array<Pet>} pets - pets array, that is encapsulated
- *
- * @method setArrayList - setter for array of pets
- * @method getArrayList - getter for array of pets
- * @method fillArray - method for filling array of pets with some data
- * @method increment - method for increment pets
- * @method decrement - method for decrement pets
- * @method ownerFound -method for buying pet, it gives owner to pet and increment cash in store, returns value to employee
- * @method display - method for display pets array in html document
- *
- * @returns {Pet} the pet object
- *
- */
+//@ts-check
 
 import Product from "./product.js";
 import { petsMock } from "./mocks.js";
 
+/**
+ * This class represents Pet. Pet class is inherited from Product class.
+ * @class Pet
+ * @extends Product
+ *
+ */
+
 export default class Pet extends Product {
+  /**
+   *
+   * @param {string} category
+   * @param {number} age
+   * @param {number} price
+   * @param {string} foodName
+   * @param {number} foodPrice
+   * @param {string} owner
+   */
   constructor(
     category = "",
-    age = "",
+    age = 0,
     price = 0,
     foodName = "",
     foodPrice = 0,
     owner = ""
   ) {
     super(category, "", price);
+    /**
+     * @property {number} age - represents age of pet
+     */
     this.age = age;
+    /**
+     * @property {Product} food - reference to Product class with food category for every pet, information about lovely food
+     */
     this.food = new Product("food", foodName, foodPrice);
+    /**
+     * @property {string} owner - represents owner of pet, if it has one
+     */
     this.owner = owner;
+    /**
+     * pets array, that is encapsulated
+     */
     var pets;
   }
 
+  /**
+   * @property {Function} setArrayList - setter for array of pets
+   * @returns {void}
+   */
   setArrayList(pets) {
     if (!pets) return;
 
     this.pets = pets;
   }
 
+  /**
+   * @property {Function} getArrayList - getter for array of pets
+   * @returns {Array<Pet>}
+   */
   getArrayList() {
     return this.pets;
   }
 
+  /**
+   * @property {Function} fillArray - method for filling array of pets with some data
+   * @returns {void}
+   */
   fillArray() {
     var pets = [];
 
@@ -59,19 +81,36 @@ export default class Pet extends Product {
     this.setArrayList(pets);
   }
 
+  /**
+   * @property {Function} increment - method for increment pets
+   * @returns {void}
+   */
   increment(pet) {
     this.pets.push(pet);
   }
 
+  /**
+   * @property {Function} decrement - method for decrement pets
+   * @returns {void}
+   *
+   */
   decrement() {
     this.pets.splice(this, 1);
   }
 
+  /**
+   * @property {Function} ownerFound - method for buying pet, it gives owner to pet and increment cash in store
+   * @returns {number} returns value to employee
+   */
   ownerFound(name, prevCash) {
     this.owner = name;
     return this.buyProduct(prevCash);
   }
 
+  /**
+   * @property {Function} display - method for display pets array in html document
+   * @returns html
+   */
   display() {
     return this.pets
       .map(

@@ -153,14 +153,21 @@ export default class Employee extends Person {
    *  display - method for display employees array in html document
    * @returns html
    */
-  display() {
-    return this.employees
+  display(ref) {
+    console.log(ref);
+
+    return ref.employees
       .map(
         (element) =>
           ` name: ${element.name} <br>
             age: ${element.age} <br> 
             email: ${element.email} <br>
-            phoneNumber: ${element.phoneNumber} <br> <br>`
+            phoneNumber: ${element.phoneNumber} <br> 
+            <button onClick={${ref.decrement(element.name)}}>Delete</button>
+
+           <br>
+           <br>
+            `
       )
       .join("");
   }

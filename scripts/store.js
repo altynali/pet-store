@@ -53,8 +53,8 @@ export default class Store {
    *
    * @returns display
    */
-  displayPets() {
-    return this.pet.display();
+  displayPets(ref) {
+    return this.pet.display(ref);
   }
 
   /**
@@ -62,8 +62,8 @@ export default class Store {
    *
    * @returns display
    */
-  displayEmployees() {
-    return this.employee.display();
+  displayEmployees(ref) {
+    return this.employee.display(ref);
   }
 
   /**

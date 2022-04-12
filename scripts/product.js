@@ -109,7 +109,12 @@ export default class Product {
         (element) =>
           `category: ${element.category} <br>
            name: ${element.name} <br> 
-           price: ${element.price} <br> <br>`
+           price: ${element.price} <br>
+           <button>Delete</button>
+
+           <br>
+           <br>
+           `
       )
       .join("");
   }

@@ -115,7 +115,7 @@ export default class Pet extends Product {
    *  display - method for display pets array in html document
    * @returns html
    */
-  display() {
+  display(ref) {
     return this.pets
       .map(
         (element) =>
@@ -123,7 +123,12 @@ export default class Pet extends Product {
            age: ${element.age} <br>
            price: ${element.price} <br> 
            lovely food: ${element.food.name} <br>
-           owner: ${element.owner || "This one has no owner"} <br> <br>`
+           owner: ${element.owner || "This one has no owner"} <br> 
+           <button onClick={${ref.decrement(element.id)}}>Delete</button>
+
+           <br>
+           <br>
+           `
       )
       .join("");
   }

@@ -41,7 +41,7 @@ export default class Store {
   }
 
   /**
-   * @property {Function} displayProducts - Product class's method for display products array in html document
+   *  displayProducts - Product class's method for display products array in html document
    * @returns display
    */
   displayProducts() {
@@ -49,7 +49,7 @@ export default class Store {
   }
 
   /**
-   *  @property {Function} displayPets - Pet class's method for display products array in html document
+   *   displayPets - Pet class's method for display products array in html document
    *
    * @returns display
    */
@@ -58,7 +58,7 @@ export default class Store {
   }
 
   /**
-   *  @property {Function} displayEmployees - Employee class's method for display products array in html document
+   *   displayEmployees - Employee class's method for display products array in html document
    *
    * @returns display
    */
@@ -67,7 +67,7 @@ export default class Store {
   }
 
   /**
-   *  @property {Function}  displayCash - Cash class's method for display products array in html document
+   *    displayCash - Cash class's method for display products array in html document
    *
    * @returns display
    */

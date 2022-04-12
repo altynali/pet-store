@@ -34,13 +34,13 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} sayHi - alerts greeting message
+   *  sayHi - alerts greeting message
    */
   sayHi() {
     return alert(`Hi! My name is ${this.name}. How can I help you?`);
   }
   /**
-   * @property {Function} setArrayList - setter for array of employees
+   *  setArrayList - setter for array of employees
    * @param {Array<Employee>} employees
    * @returns {void}
    */
@@ -51,7 +51,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} getArrayList - getter for array of employees
+   *  getArrayList - getter for array of employees
    * @returns {Array<Employee>}
    */
   getArrayList() {
@@ -59,7 +59,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} setStore - setter for store reference
+   *  setStore - setter for store reference
    * @param {Store} store
    * @returns {void}
    */
@@ -68,7 +68,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} setStore - getter for store reference
+   *  getStore - getter for store reference
    * @returns {Store}
    */
   getStore() {
@@ -76,7 +76,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} fillArray - method for filling array of employees with some data
+   *  fillArray - method for filling array of employees with some data
    * @param {Store} store
    * @returns {void}
    */
@@ -105,7 +105,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} increment - method for increment employees
+   *  increment - method for increment employees
    * @param {Employee} employee
    * @returns {void}
    */
@@ -114,7 +114,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} decrement - method for decrement employees
+   *  decrement - method for decrement employees
    * @param {string} name
    * @returns {void}
    *
@@ -128,7 +128,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} serveCustomer -method for buying  something, it checks if there is name of owner and understands what is going to be bought.
+   *  serveCustomer -method for buying  something, it checks if there is name of owner and understands what is going to be bought.
    * Also it checks if employee is cashier
    * @param {*} product
    * @param {string} newOwnerName
@@ -150,7 +150,7 @@ export default class Employee extends Person {
   }
 
   /**
-   * @property {Function} display - method for display employees array in html document
+   *  display - method for display employees array in html document
    * @returns html
    */
   display() {

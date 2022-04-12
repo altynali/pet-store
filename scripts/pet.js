@@ -47,7 +47,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} setArrayList - setter for array of pets
+   *  setArrayList - setter for array of pets
    * @returns {void}
    */
   setArrayList(pets) {
@@ -57,7 +57,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} getArrayList - getter for array of pets
+   *  getArrayList - getter for array of pets
    * @returns {Array<Pet>}
    */
   getArrayList() {
@@ -65,7 +65,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} fillArray - method for filling array of pets with some data
+   *  fillArray - method for filling array of pets with some data
    * @returns {void}
    */
   fillArray() {
@@ -81,7 +81,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} increment - method for increment pets
+   *  increment - method for increment pets
    * @returns {void}
    */
   increment(pet) {
@@ -89,7 +89,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} decrement - method for decrement pets
+   *  decrement - method for decrement pets
    * @param {string} id
    * @returns {void}
    *
@@ -103,7 +103,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} ownerFound - method for buying pet, it gives owner to pet and increment cash in store
+   *  ownerFound - method for buying pet, it gives owner to pet and increment cash in store
    * @returns {number} returns value to employee
    */
   ownerFound(name, prevCash) {
@@ -112,7 +112,7 @@ export default class Pet extends Product {
   }
 
   /**
-   * @property {Function} display - method for display pets array in html document
+   *  display - method for display pets array in html document
    * @returns html
    */
   display() {

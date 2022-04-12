@@ -30,7 +30,7 @@ export default class Person {
   }
 
   /**
-   *  @property {Function} sayHi - alerts greeting message
+   *   sayHi - alerts greeting message
    * @returns alert
    */
 

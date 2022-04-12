@@ -37,7 +37,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} setArrayList - setter for array of  products
+   *  setArrayList - setter for array of  products
    * @param {Array<Product>} products
    * @returns {void}
    */
@@ -48,7 +48,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} getArrayList - getter for array of products
+   *  getArrayList - getter for array of products
    * @returns {Array<Product>} products
    */
   getArrayList() {
@@ -56,7 +56,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} fillArray - method for filling array of products with some data
+   *  fillArray - method for filling array of products with some data
    * @returns {void}
    */
   fillArray() {
@@ -70,7 +70,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} increment - method for increment products
+   *  increment - method for increment products
    * @returns {void}
    */
   increment(product) {
@@ -78,7 +78,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} decrement - method for decrement products
+   *  decrement - method for decrement products
    * @param {string} id
    * @returns {void}
    */
@@ -91,7 +91,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} buyProduct - method for buying something and increment cash in store, returns value to employee
+   *  buyProduct - method for buying something and increment cash in store, returns value to employee
    * @returns {number} cash
    */
   buyProduct(prevCash) {
@@ -100,7 +100,7 @@ export default class Product {
   }
 
   /**
-   * @property {Function} display - method for display products array in html document
+   *  display - method for display products array in html document
    * @returns html
    */
   display() {

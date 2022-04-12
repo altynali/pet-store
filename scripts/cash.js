@@ -16,7 +16,7 @@ export default class Cash {
   }
 
   /**
-   * @property {Function} setCash - cash setter
+   *  setCash - cash setter
    * @returns {void}
    */
   setCash(cash) {
@@ -24,7 +24,7 @@ export default class Cash {
   }
 
   /**
-   * @property {Function} getCash - cash getter
+   *  getCash - cash getter
    * @returns {number}
    */
   getCash() {
@@ -32,7 +32,7 @@ export default class Cash {
   }
 
   /**
-   * @property {Function} display - method for cash amount pets array in html document
+   *  display - method for cash amount pets array in html document
    * @returns html
    */
   display() {

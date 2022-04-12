@@ -6,8 +6,14 @@ import { employeesMock } from "./mocks.js";
 
 /**
  * This class represents Employee. Employee class is inherited from Person class.
+ *
+ * store - represents reference of Store class, encapsulated property
+ *
+ * employees array - encapsulated property
+ *
  * @class Employee
  * @extends Person
+ *
  */
 
 export default class Employee extends Person {
@@ -24,14 +30,6 @@ export default class Employee extends Person {
      * @property {string} role -  represents employee's role
      */
     this.role = role;
-    /**
-     * represents reference of Store class
-     */
-    var store;
-    /**
-     * employees array, that is encapsulated
-     */
-    var employees;
   }
 
   /**

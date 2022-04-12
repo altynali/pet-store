@@ -4,7 +4,7 @@ import Employee from "./employee.js";
 //inicializing store
 const store = new Store();
 
-// cashier or main employee or manager
+//adding cashier manually
 const cashierEmployee = new Employee(
   "Petr",
   "cashier",
@@ -45,7 +45,7 @@ store.employee
   .getArrayList()[1]
   .serveCustomer(store.pet.getArrayList()[0], "Will");
 
-//set data insight div
+//set result data insight div
 htmlDivPets.innerHTML = store.displayPets();
 htmlDivProducts.innerHTML = store.displayProducts();
 htmlDivEmployees.innerHTML = store.displayEmployees();

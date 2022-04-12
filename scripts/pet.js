@@ -5,6 +5,9 @@ import { petsMock } from "./mocks.js";
 
 /**
  * This class represents Pet. Pet class is inherited from Product class.
+ *
+ * pets array - encapsulated property
+ *
  * @class Pet
  * @extends Product
  *
@@ -41,10 +44,6 @@ export default class Pet extends Product {
      * @property {string} owner - represents owner of pet, if it has one
      */
     this.owner = owner;
-    /**
-     * pets array, that is encapsulated
-     */
-    var pets;
   }
 
   /**

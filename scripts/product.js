@@ -2,6 +2,9 @@
 
 /**
  * This class represents Product.
+ *
+ * products array - encapsulated property
+ *
  * @class Product
  *
  */
@@ -31,10 +34,6 @@ export default class Product {
      * @property {number} price - represents price of product
      */
     this.price = price;
-    /**
-     * products array, that is encapsulated
-     */
-    var products;
   }
 
   /**

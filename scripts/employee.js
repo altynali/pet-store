@@ -30,6 +30,7 @@ export default class Employee extends Person {
      * @property {string} role -  represents employee's role
      */
     this.role = role;
+    var employee;
   }
 
   /**
@@ -40,7 +41,7 @@ export default class Employee extends Person {
   }
   /**
    * @property {Function} setArrayList - setter for array of employees
-   * @param {*} employees
+   * @param {Array<Employee>} employees
    * @returns {void}
    */
   setArrayList(employees) {
@@ -59,7 +60,7 @@ export default class Employee extends Person {
 
   /**
    * @property {Function} setStore - setter for store reference
-   * @param {*} store
+   * @param {Store} store
    * @returns {void}
    */
   setStore(store) {
@@ -76,7 +77,7 @@ export default class Employee extends Person {
 
   /**
    * @property {Function} fillArray - method for filling array of employees with some data
-   * @param {*} store
+   * @param {Store} store
    * @returns {void}
    */
   fillArray(store) {
@@ -105,7 +106,7 @@ export default class Employee extends Person {
 
   /**
    * @property {Function} increment - method for increment employees
-   * @param {*} employee
+   * @param {Employee} employee
    * @returns {void}
    */
   increment(employee) {
@@ -114,18 +115,23 @@ export default class Employee extends Person {
 
   /**
    * @property {Function} decrement - method for decrement employees
-   * @param {*} name
+   * @param {string} name
    * @returns {void}
+   *
    */
   decrement(name) {
-    this.employees.splice(this.employees.indexOf(name), 1);
+    const index = this.employees.findIndex((object) => {
+      return object.name === name;
+    });
+
+    this.employees.splice(index, 1);
   }
 
   /**
    * @property {Function} serveCustomer -method for buying  something, it checks if there is name of owner and understands what is going to be bought.
    * Also it checks if employee is cashier
    * @param {*} product
-   * @param {*} newOwnerName
+   * @param {string} newOwnerName
    * @returns {void}
    */
   serveCustomer(product, newOwnerName) {

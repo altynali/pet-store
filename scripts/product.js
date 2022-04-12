@@ -13,15 +13,15 @@ import { productsMock } from "./mocks.js";
 
 export default class Product {
   /**
-   * @param {*} category
-   * @param {*} name
-   * @param {*} price
+   * @param {string} category
+   * @param {string} name
+   * @param {number} price
    */
   constructor(category = "food" || "toy", name = "", price) {
     /**
-     * @property {number} id - unique identifier, generates in class itself
+     * @property {string} id - unique identifier, generates in class itself
      */
-    this.id = Date.now();
+    this.id = Math.random().toString(36).slice(2);
     /**
      * @property {string} category - represents category of product
      */
@@ -79,10 +79,15 @@ export default class Product {
 
   /**
    * @property {Function} decrement - method for decrement products
+   * @param {string} id
    * @returns {void}
    */
-  decrement(name) {
-    this.products.splice(this.products.indexOf(name), 1);
+  decrement(id) {
+    const index = this.products.findIndex((object) => {
+      return object.id === id;
+    });
+
+    this.products.splice(index, 1);
   }
 
   /**

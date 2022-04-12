@@ -1,5 +1,6 @@
 import Store from "./store.js";
 import Employee from "./employee.js";
+import Pet from "./pet.js";
 
 //inicializing store
 const store = new Store();
@@ -26,8 +27,22 @@ store.pet.fillArray();
 store.product.fillArray();
 store.employee.fillArray(store);
 
-//adding employee that can work with cash
+//------------------------------------------
+//------------------------------------------
+//------------------------------------------
+
+//increment and decrement employee
 store.employee.increment(new Employee("LLLLLL", "security", 50, "d", 50));
+
+// store.employee.decrement("Jane");
+
+//increment and decrement pet
+store.pet.increment(new Pet("category", 10, 1000, "every food"));
+
+store.pet.decrement(store.pet.getArrayList()[1].id);
+//------------------------------------------
+//------------------------------------------
+//------------------------------------------
 
 store.employee
   .getArrayList()[1]
@@ -39,6 +54,10 @@ store.employee
 
 cashierEmployee.serveCustomer(store.pet.getArrayList()[2], "Cal");
 cashierEmployee.serveCustomer(store.product.getArrayList()[2]);
+
+cashierEmployee.serveCustomer(store.product.getArrayList()[2]);
+
+store;
 
 //employees, that have not cashier role can't have access to cash
 store.employee

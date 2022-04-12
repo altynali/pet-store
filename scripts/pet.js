@@ -90,11 +90,16 @@ export default class Pet extends Product {
 
   /**
    * @property {Function} decrement - method for decrement pets
+   * @param {string} id
    * @returns {void}
    *
    */
-  decrement() {
-    this.pets.splice(this, 1);
+  decrement(id) {
+    const index = this.pets.findIndex((object) => {
+      return object.id === id;
+    });
+
+    this.pets.splice(index, 1);
   }
 
   /**

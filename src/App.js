@@ -1,6 +1,6 @@
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import DragDrop from "./classes/Layout";
+import Layout from "./classes/Layout";
 import { Component } from "react";
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <DndProvider backend={HTML5Backend}>
         <div className="App">
-          <DragDrop />
+          <Layout />
         </div>
       </DndProvider>
     );

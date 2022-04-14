@@ -1,21 +1,3 @@
-export const pictureList = [
-  {
-    id: 1,
-    url: "https://yt3.ggpht.com/ytc/AAUvwnjOQiXUsXYMs8lwrd4litEEqXry1-atqJavJJ09=s900-c-k-c0x00ffffff-no-rj",
-    text: "dog",
-  },
-  {
-    id: 2,
-    url: "https://media-exp1.licdn.com/dms/image/C4D03AQExheo0sff_yQ/profile-displayphoto-shrink_200_200/0/1590072898568?e=1630540800&v=beta&t=_W-gWZewSBYQ-UAjpGvR8h_8Vvo202IHQQissbK2aKc",
-    text: "cat",
-  },
-  {
-    id: 3,
-    url: "https://yt3.ggpht.com/pe57RF1GZibOWeZ9GwRWbjnLDCK2EEAeQ3u4iMAFNeaz-PN9uSsg1p2p32TZUedNnrUhKfoOuMM=s900-c-k-c0x00ffffff-no-rj",
-    text: "parrot",
-  },
-];
-
 export const employeesMock = [
   {
     name: "Bruce",
@@ -56,72 +38,106 @@ export const employeesMock = [
 
 export const petsMock = [
   {
-    category: "dog",
-    age: 3,
-    price: 100,
-    foodName: "Butterscotch",
-  },
-  {
-    category: "dog",
-    age: 3,
+    id: Math.random().toString(36).slice(2),
+    category: "pet",
+    subCategory: "dog",
     price: 200,
-    foodName: "Pedigree",
   },
   {
-    category: "cat",
-    age: 3,
+    id: Math.random().toString(36).slice(2),
+    category: "pet",
+    subCategory: "cat",
     price: 300,
-    foodName: "Whiskas",
   },
   {
-    category: "cat",
-    age: 5,
+    id: Math.random().toString(36).slice(2),
+
+    category: "pet",
+    subCategory: "parrot",
     price: 150,
-    foodName: "Whiskas",
-  },
-  {
-    category: "parrot",
-    age: 1.5,
-    price: 50,
-    foodName: "Rio",
-  },
-  {
-    category: "parrot",
-    age: 1,
-    price: 100,
-    foodName: "Rio",
   },
 ];
 
 export const productsMock = [
   {
-    category: "food",
+    id: Math.random().toString(36).slice(2),
+    category: "product",
+    subCategory: "food",
     name: "Butterscotch",
     price: 15,
   },
   {
-    category: "food",
+    id: Math.random().toString(36).slice(2),
+    category: "product",
+    subCategory: "food",
     name: "Pedigree",
     price: 20,
   },
   {
-    category: "food",
-    name: "Whiskas",
+    id: Math.random().toString(36).slice(2),
+    category: "product",
+    subCategory: "toy",
+    name: "Rio",
     price: 30,
   },
   {
-    category: "food",
-    name: "Rio",
-    price: 20,
-  },
-  {
-    category: "toy",
+    id: Math.random().toString(36).slice(2),
+    category: "product",
+    subCategory: "toy",
     name: "dog toy",
     price: 20,
   },
+
   {
-    category: "toy",
+    id: Math.random().toString(36).slice(2),
+    category: "product",
+    subCategory: "toy",
     name: "cat toy",
-    price: 15,
+    price: 20,
   },
 ];
+
+// export const petsMock = [
+//   {
+//     id: Math.random().toString(36).slice(2),
+//     category: "dog",
+//     age: 3,
+//     price: 100,
+//     foodName: "Butterscotch",
+//   },
+//   {
+//     id: Math.random().toString(36).slice(2),
+//     category: "dog",
+//     age: 3,
+//     price: 200,
+//     foodName: "Pedigree",
+//   },
+//   {
+//     id: Math.random().toString(36).slice(2),
+//     category: "cat",
+//     age: 3,
+//     price: 300,
+//     foodName: "Whiskas",
+//   },
+//   {
+//     id: Math.random().toString(36).slice(2),
+//     category: "cat",
+//     age: 5,
+//     price: 150,
+//     foodName: "Whiskas",
+//   },
+//   {
+//     id: Math.random().toString(36).slice(2),
+//     category: "parrot",
+//     age: 1.5,
+//     price: 50,
+//     foodName: "Rio",
+//   },
+//   {
+//     id: Math.random().toString(36).slice(2),
+//     category: "parrot",
+//     age: 1,
+//     price: 100,
+//     foodName: "Rio",
+//   },
+// ];

@@ -2,6 +2,7 @@ import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { useDrop } from "react-dnd";
 import { elseProducts } from "../mocks/mocks";
+import DropFood from "./DropFood";
 
 export default function BoardBlock({
   item,
@@ -62,12 +63,16 @@ export default function BoardBlock({
               <div>
                 {item.content} <br />
                 {item.price !== 0 && `Price: ${item.price}`}
-                {/* {item.type === "pet" && type === "person" && (
+                {item.type === "pet" && type === "person" && (
                   <div>
-                    Food:
-                    <div ref={drop}>{}</div>
+                    Products:
+                    <div className="droppable">{}</div>
+                    {/* <DropFood
+                      droppableId={"foodDrop"}
+                      products={item.products}
+                    /> */}
                   </div>
-                )} */}
+                )}
               </div>
 
               {/* {type !== "product" && type !== "pet" && ( */}

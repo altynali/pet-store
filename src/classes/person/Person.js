@@ -24,6 +24,7 @@ export default function Person({
       key={columnId}
     >
       <h2>{column.name}</h2>
+      <h3>{column.email}</h3>
       <div>
         <Droppable droppableId={columnId} key={columnId}>
           {(provided, snapshot) => {

@@ -1,12 +1,5 @@
 import { v4 as uuid } from "uuid";
 
-export const petsMock = [
-  { id: uuid(), content: "First pet", price: 200, type: "pet" },
-  { id: uuid(), content: "Second pet", price: 200, type: "pet" },
-  { id: uuid(), content: "Third pet", price: 200, type: "pet" },
-  { id: uuid(), content: "Fourth pet", price: 200, type: "pet" },
-  { id: uuid(), content: "Fifth pet", price: 200, type: "pet" },
-];
 export const productsMock = [
   { id: uuid(), content: "First product", price: 20, type: "product" },
   { id: uuid(), content: "Second product", price: 20, type: "product" },
@@ -19,6 +12,20 @@ export const elseProducts = [
   { id: uuid(), content: "First product", price: 20, type: "product" },
   { id: uuid(), content: "First product", price: 20, type: "product" },
   { id: uuid(), content: "First product", price: 20, type: "product" },
+];
+
+export const petsMock = [
+  {
+    id: uuid(),
+    content: "First pet",
+    price: 200,
+    type: "pet",
+    products: [],
+  },
+  { id: uuid(), content: "Second pet", price: 200, type: "pet", products: [] },
+  { id: uuid(), content: "Third pet", price: 200, type: "pet", products: [] },
+  { id: uuid(), content: "Fourth pet", price: 200, type: "pet", products: [] },
+  { id: uuid(), content: "Fifth pet", price: 200, type: "pet", products: [] },
 ];
 
 export const columnsMock = {
@@ -34,18 +41,21 @@ export const columnsMock = {
   },
   [uuid()]: {
     name: "1 Person",
+    email: "1email@gmail.com",
     type: "person",
     items: [],
     total: 0,
   },
   [uuid()]: {
     name: "2 Person",
+    email: "1email@gmail.com",
     type: "person",
     items: [],
     total: 0,
   },
   [uuid()]: {
     name: "3 Person",
+    email: "1email@gmail.com",
     type: "person",
     items: [],
     total: 0,

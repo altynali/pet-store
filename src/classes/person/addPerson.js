@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Draggable } from "react-beautiful-dnd";
 import { v4 as uuid } from "uuid";
+import { elseProducts } from "../../mocks/mocks";
 
 export default function AddPersonBlock({ columns, setColumns }) {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const decrement = (item, columnId) => {
     setColumns({});
@@ -13,11 +16,13 @@ export default function AddPersonBlock({ columns, setColumns }) {
       ...columns,
       [uuid()]: {
         name: name,
+        email: email,
         type: "person",
         items: [],
       },
     });
     setName("");
+    setEmail("");
   };
 
   return (
@@ -33,26 +38,18 @@ export default function AddPersonBlock({ columns, setColumns }) {
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
-          {/* <label>name</label>
-      <input type="text" className="input" /> */}
+          <input
+            type="text"
+            className="input"
+            placeholder="person email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
           <button className="button" onClick={incrementPerson}>
             add
           </button>
         </div>
       </div>
-      {/* <div
-        style={{ display: "flex", justifyContent: "center", height: "100%" }}
-      >
-        <div className="Pictures">
-          {elseProducts.map((item) => {
-            return (
-              <DraggingElement key={item.id} id={item.id}>
-                {item.content}
-              </DraggingElement>
-            );
-          })}
-        </div>
-      </div> */}
     </>
   );
 }

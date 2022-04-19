@@ -1,8 +1,5 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { useDrop } from "react-dnd";
-import { elseProducts } from "../mocks/mocks";
-import DropFood, { DragDrop } from "./DragDrop";
 
 export default function BoardBlock({
   item,
@@ -43,15 +40,17 @@ export default function BoardBlock({
               <div>
                 {item.content} <br />
                 {item.price !== 0 && `Price: ${item.price}`}
-                {item.type === "pet" && type === "person" && <input />}
+                {/* {item.type === "pet" && type === "person" && <input />} */}
               </div>
 
               {/* {type !== "product" && type !== "pet" && ( */}
               <div>
-                {/* <span>🖋 &nbsp;</span> */}
                 <span
                   onClick={() => decrement(item, columnId)}
-                  style={{ cursor: "pointer" }}
+                  style={{
+                    cursor: "pointer",
+                    display: item.isDragDisabled ? "none" : "flex",
+                  }}
                 >
                   🗑
                 </span>

@@ -28,7 +28,7 @@ export const petsMock = [
   { id: uuid(), content: "Fifth pet", price: 200, type: "pet", products: [] },
 ];
 
-export const columnsMock = {
+export const columnsMockFirst = {
   [uuid()]: {
     name: "PetsList",
     type: "pet",
@@ -55,6 +55,74 @@ export const columnsMock = {
   },
   [uuid()]: {
     name: "3 Person",
+    email: "1email@gmail.com",
+    type: "person",
+    items: [],
+    total: 0,
+  },
+};
+
+export const columnsMockSecond = {
+  [uuid()]: {
+    name: "PetsList",
+    type: "pet",
+    items: petsMock,
+  },
+  [uuid()]: {
+    name: "ProductsList",
+    type: "product",
+    items: productsMock,
+  },
+  [uuid()]: {
+    name: "1 Person",
+    email: "1email@gmail.com",
+    type: "person",
+    items: [],
+    total: 0,
+  },
+  [uuid()]: {
+    name: "2 Person",
+    email: "1email@gmail.com",
+    type: "person",
+    items: [],
+    total: 0,
+  },
+  [uuid()]: {
+    name: "3 Person",
+    email: "1email@gmail.com",
+    type: "person",
+    items: [],
+    total: 0,
+  },
+};
+
+export const columnsMockThird = {
+  [uuid()]: {
+    name: "PetsList",
+    type: "pet",
+    items: petsMock,
+  },
+  [uuid()]: {
+    name: "ProductsList",
+    type: "product",
+    items: productsMock,
+  },
+  [uuid()]: {
+    name: "Person",
+    email: "1email@gmail.com",
+    type: "person",
+    items: [],
+    total: 0,
+  },
+  [uuid()]: {
+    name: "Person",
+    email: "1email@gmail.com",
+    type: "person",
+    items: [],
+    total: 0,
+  },
+  [uuid()]: {
+    name: "Person",
     email: "1email@gmail.com",
     type: "person",
     items: [],

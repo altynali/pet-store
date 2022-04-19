@@ -8,6 +8,7 @@ import { v4 as uuid } from "uuid";
 import AddPersonBlock from "./classes/person/addPerson";
 import "./App.css";
 import Cash from "./classes/Cash";
+import { DragDrop, DropFood } from "./classes/DragDrop";
 
 function App() {
   const [columns, setColumns] = useState(columnsMock);
@@ -154,6 +155,8 @@ function App() {
           </div>
         </DragDropContext>
       </div>
+
+      {/* <DragDrop /> */}
     </>
   );
 }

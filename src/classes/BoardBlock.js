@@ -2,7 +2,7 @@ import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { useDrop } from "react-dnd";
 import { elseProducts } from "../mocks/mocks";
-import DropFood from "./DropFood";
+import DropFood, { DragDrop } from "./DragDrop";
 
 export default function BoardBlock({
   item,
@@ -14,26 +14,6 @@ export default function BoardBlock({
   columns,
   setColumns,
 }) {
-  const addFoodToPet = (id) => {
-    // const items = elseProducts.filter((element) => item.id === element.id);
-    // console.log(items[0]);
-    // setColumns({
-    //   ...columns,
-    //   [columnId]: {
-    //     ...column,
-    //     items: [...column.items],
-    //   },
-    // });
-  };
-
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: "image",
-    drop: (id) => addFoodToPet(id),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
-
   return (
     <Draggable
       key={item.id}
@@ -66,7 +46,7 @@ export default function BoardBlock({
                 {item.type === "pet" && type === "person" && (
                   <div>
                     Products:
-                    <div className="droppable">{}</div>
+                    <div>{}</div>
                     {/* <DropFood
                       droppableId={"foodDrop"}
                       products={item.products}

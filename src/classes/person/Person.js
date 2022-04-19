@@ -1,8 +1,14 @@
-import React from "react";
+import React, { Children } from "react";
 import { Droppable } from "react-beautiful-dnd";
-import BoardBlock from "./BoardBlock";
+import BoardBlock from "../BoardBlock";
 
-export default function Board({ columnId, column, type, decrement }) {
+export default function Person({
+  columnId,
+  column,
+  type,
+  decrement,
+  children,
+}) {
   return (
     <div
       style={{
@@ -13,7 +19,7 @@ export default function Board({ columnId, column, type, decrement }) {
       key={columnId}
     >
       <h2>{column.name}</h2>
-      <div style={{ margin: 8 }}>
+      <div>
         <Droppable droppableId={columnId} key={columnId}>
           {(provided, snapshot) => {
             return (
@@ -47,6 +53,7 @@ export default function Board({ columnId, column, type, decrement }) {
           }}
         </Droppable>
       </div>
+      {children}
     </div>
   );
 }

@@ -15,6 +15,12 @@ export const productsMock = [
   { id: uuid(), content: "Fifth product", price: 20, type: "product" },
 ];
 
+export const elseProducts = [
+  { id: uuid(), content: "First product", price: 20, type: "product" },
+  { id: uuid(), content: "First product", price: 20, type: "product" },
+  { id: uuid(), content: "First product", price: 20, type: "product" },
+];
+
 export const columnsMock = {
   [uuid()]: {
     name: "PetsList",

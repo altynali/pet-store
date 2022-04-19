@@ -25,7 +25,7 @@ export default function BoardBlock({ item, index, type, decrement, columnId }) {
             >
               <div>
                 {item.content} <br /> Price: {item.price}
-                {item.type === "pet" && <div>Food:</div>}
+                {item.type === "pet" && type === "person" && <div>Food:</div>}
               </div>
 
               {/* {type !== "product" && type !== "pet" && ( */}

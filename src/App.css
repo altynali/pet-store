@@ -58,3 +58,8 @@ img {
 .button:hover {
   background-color: #263b4a;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}

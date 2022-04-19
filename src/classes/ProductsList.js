@@ -1,62 +1,71 @@
-import React from "react";
-import { Droppable } from "react-beautiful-dnd";
-import BoardBlock from "./BoardBlock";
+import React, { useState } from "react";
 import "../App.css";
+import Person from "./person/Person";
+import { v4 as uuid } from "uuid";
+import DraggingElement from "../functions/DraggingElement";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-function ProductsList({ column, columnId, incrementProduct, decrement, type }) {
+function ProductsList({
+  column,
+  columnId,
+  decrement,
+  type,
+  columns,
+  setColumns,
+}) {
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+
+  const incrementProduct = () => {
+    const thisItems = [...column.items];
+
+    thisItems.push({
+      id: uuid(),
+      content: name,
+      price: price,
+      type: "product",
+    });
+
+    setColumns({
+      ...columns,
+      [columnId]: {
+        ...column,
+        items: [...thisItems],
+      },
+    });
+
+    setName("");
+    setPrice("");
+  };
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "15%",
-      }}
-      key={columnId}
+    <Person
+      column={column}
+      columnId={columnId}
+      type={column.type}
+      decrement={decrement}
     >
-      <h2>{column.name}</h2>
-      <div style={{ margin: 8 }}>
-        <Droppable droppableId={columnId} key={columnId}>
-          {(provided, snapshot) => {
-            return (
-              <div
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-                style={{
-                  background: snapshot.isDraggingOver
-                    ? "lightblue"
-                    : "lightgrey",
-                  padding: 4,
-                  width: 250,
-                  minHeight: 500,
-                }}
-              >
-                {column.items.map((item, index) => {
-                  return (
-                    <BoardBlock
-                      item={item}
-                      index={index}
-                      key={index}
-                      type={type}
-                      columnId={columnId}
-                      decrement={decrement}
-                    />
-                  );
-                })}
-                {provided.placeholder}
-              </div>
-            );
-          }}
-        </Droppable>
-      </div>
       <div style={{ width: "80%" }}>
-        <input type="text" className="input" placeholder="name" />
-        <input type="text" className="input" placeholder="price" />
+        <input
+          type="text"
+          className="input"
+          placeholder="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          className="input"
+          placeholder="price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
         <button className="button" onClick={incrementProduct}>
           add
         </button>
       </div>
-    </div>
+    </Person>
   );
 }
 

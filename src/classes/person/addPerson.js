@@ -3,7 +3,7 @@ import { Draggable } from "react-beautiful-dnd";
 import { v4 as uuid } from "uuid";
 import { elseProducts } from "../../mocks/mocks";
 import { DropFood } from "../DragDrop";
-import Person from "./Person";
+import Board from "./Board";
 
 export default function AddPersonBlock({ columns, setColumns }) {
   const [name, setName] = useState("");

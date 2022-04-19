@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import Person from "./person/Person";
+import Board from "./person/Board";
 import { v4 as uuid } from "uuid";
 
 function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
@@ -21,7 +21,7 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
     });
 
     setName("");
-    setPrice(0);
+    setPrice("");
   };
 
   const handlePrice = (value) => {
@@ -30,7 +30,7 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
   };
 
   return (
-    <Person
+    <Board
       column={column}
       columnId={columnId}
       type={column.type}
@@ -55,7 +55,7 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
           add
         </button>
       </div>
-    </Person>
+    </Board>
   );
 }
 

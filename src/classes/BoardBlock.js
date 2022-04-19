@@ -43,16 +43,7 @@ export default function BoardBlock({
               <div>
                 {item.content} <br />
                 {item.price !== 0 && `Price: ${item.price}`}
-                {item.type === "pet" && type === "person" && (
-                  <div>
-                    Products:
-                    <div>{}</div>
-                    {/* <DropFood
-                      droppableId={"foodDrop"}
-                      products={item.products}
-                    /> */}
-                  </div>
-                )}
+                {item.type === "pet" && type === "person" && <input />}
               </div>
 
               {/* {type !== "product" && type !== "pet" && ( */}

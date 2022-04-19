@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import Person from "./person/Person";
+import Board from "./person/Board";
 import { v4 as uuid } from "uuid";
 
 function ProductsList({
@@ -33,7 +33,7 @@ function ProductsList({
     });
 
     setName("");
-    setPrice(0);
+    setPrice("");
   };
 
   const handlePrice = (value) => {
@@ -42,7 +42,7 @@ function ProductsList({
   };
 
   return (
-    <Person
+    <Board
       column={column}
       columnId={columnId}
       type={column.type}
@@ -67,7 +67,7 @@ function ProductsList({
           add
         </button>
       </div>
-    </Person>
+    </Board>
   );
 }
 

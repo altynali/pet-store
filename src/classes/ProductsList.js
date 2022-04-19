@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "../App.css";
 import Person from "./person/Person";
 import { v4 as uuid } from "uuid";
-import DraggingElement from "../functions/DraggingElement";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 
 function ProductsList({
   column,
@@ -23,7 +20,7 @@ function ProductsList({
     thisItems.push({
       id: uuid(),
       content: name,
-      price: price,
+      price: parseInt(price),
       type: "product",
     });
 
@@ -36,7 +33,12 @@ function ProductsList({
     });
 
     setName("");
-    setPrice("");
+    setPrice(0);
+  };
+
+  const handlePrice = (value) => {
+    const numValue = parseInt(value);
+    setPrice(numValue);
   };
 
   return (
@@ -46,7 +48,7 @@ function ProductsList({
       type={column.type}
       decrement={decrement}
     >
-      <div style={{ width: "80%" }}>
+      <div>
         <input
           type="text"
           className="input"
@@ -59,7 +61,7 @@ function ProductsList({
           className="input"
           placeholder="price"
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => handlePrice(e.target.value)}
         />
         <button className="button" onClick={incrementProduct}>
           add

@@ -36,15 +36,18 @@ export const columnsMock = {
     name: "1 Person",
     type: "person",
     items: [],
+    total: 0,
   },
   [uuid()]: {
     name: "2 Person",
     type: "person",
     items: [],
+    total: 0,
   },
   [uuid()]: {
     name: "3 Person",
     type: "person",
     items: [],
+    total: 0,
   },
 };

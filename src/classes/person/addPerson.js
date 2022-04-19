@@ -1,26 +1,11 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
-import DraggingElement from "../../functions/DraggingElement";
-import { elseProducts } from "../../mocks/mocks";
 
 export default function AddPersonBlock({ columns, setColumns }) {
   const [name, setName] = useState("");
 
   const decrement = (item, columnId) => {
-    const thisColumn = columns[columnId];
-    const thisItems = [...thisColumn.items];
-    thisItems.splice(
-      thisItems.findIndex((obj) => obj.id === item.id),
-      1
-    );
-
-    setColumns({
-      ...columns,
-      [columnId]: {
-        ...thisColumn,
-        items: thisItems,
-      },
-    });
+    setColumns({});
   };
 
   const incrementPerson = () => {
@@ -55,15 +40,19 @@ export default function AddPersonBlock({ columns, setColumns }) {
           </button>
         </div>
       </div>
-      <div
+      {/* <div
         style={{ display: "flex", justifyContent: "center", height: "100%" }}
       >
-        {/* <div className="Pictures">
+        <div className="Pictures">
           {elseProducts.map((item) => {
-            return <DraggingElement item={item} id={item.id} />;
+            return (
+              <DraggingElement key={item.id} id={item.id}>
+                {item.content}
+              </DraggingElement>
+            );
           })}
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </>
   );
 }

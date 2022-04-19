@@ -21,7 +21,12 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
     });
 
     setName("");
-    setPrice("");
+    setPrice(0);
+  };
+
+  const handlePrice = (value) => {
+    const numValue = parseInt(value);
+    setPrice(numValue);
   };
 
   return (
@@ -31,7 +36,7 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
       type={column.type}
       decrement={decrement}
     >
-      <div style={{ width: "80%" }}>
+      <div>
         <input
           type="text"
           className="input"
@@ -44,7 +49,7 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
           className="input"
           placeholder="price"
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => handlePrice(e.target.value)}
         />
         <button className="button" onClick={incrementPet}>
           add

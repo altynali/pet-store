@@ -1,6 +1,7 @@
 import React, { Children } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import BoardBlock from "../BoardBlock";
+import "../../App.css";
 
 export default function Person({
   columnId,
@@ -8,6 +9,9 @@ export default function Person({
   type,
   decrement,
   children,
+  columns,
+  setColumns,
+  payToStore,
 }) {
   return (
     <div
@@ -15,6 +19,7 @@ export default function Person({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        margin: 5,
       }}
       key={columnId}
     >
@@ -44,6 +49,9 @@ export default function Person({
                       type={type}
                       columnId={columnId}
                       decrement={decrement}
+                      column={column}
+                      columns={columns}
+                      setColumns={setColumns}
                     />
                   );
                 })}
@@ -52,8 +60,27 @@ export default function Person({
             );
           }}
         </Droppable>
+        <div
+          style={{
+            background: "lightgrey",
+            padding: 4,
+            width: 250,
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          {type === "person" ? (
+            <>
+              total: {column.total || 0}
+              <button className="button" onClick={() => payToStore(columnId)}>
+                pay
+              </button>
+            </>
+          ) : (
+            children
+          )}
+        </div>
       </div>
-      {children}
     </div>
   );
 }

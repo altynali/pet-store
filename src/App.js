@@ -7,6 +7,7 @@ import { columnsMock } from "./mocks/mocks";
 import { v4 as uuid } from "uuid";
 import AddPersonBlock from "./classes/person/addPerson";
 import "./App.css";
+import Cash from "./classes/Cash";
 
 function App() {
   const [columns, setColumns] = useState(columnsMock);
@@ -23,6 +24,10 @@ function App() {
       const destItems = [...destColumn.items];
       const [removed] = sourceItems.splice(source.index, 1);
       destItems.splice(destination.index, 0, removed);
+
+      let total = 0;
+      destItems.forEach((element) => (total = total + element.price));
+
       setColumns({
         ...columns,
         [source.droppableId]: {
@@ -32,6 +37,7 @@ function App() {
         [destination.droppableId]: {
           ...destColumn,
           items: destItems,
+          total: total,
         },
       });
     } else {
@@ -66,23 +72,43 @@ function App() {
     });
   };
 
-  const incrementPerson = () => {
+  const [cash, setCash] = useState(0);
+
+  const countCash = (id) => {
+    let count = 0;
+
+    const thisColumn = columns[id];
+    count = cash + thisColumn.total;
+
+    thisColumn.items.forEach((element) => {
+      element.isDragDisabled = true;
+      element.price = 0;
+    });
+
+    setCash(count);
     setColumns({
       ...columns,
-      [uuid()]: {
-        name: name,
-        type: "person",
-        items: [],
+      [id]: {
+        ...thisColumn,
+        total: 0,
       },
     });
+
+    alert(`Thank you, ${thisColumn.name}!`);
   };
 
   return (
     <>
       <div
-        style={{ display: "flex", justifyContent: "center", height: "100%" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          height: "100%",
+          alignItems: "center",
+        }}
       >
         <AddPersonBlock columns={columns} setColumns={setColumns} />
+        <Cash cash={cash} />
       </div>
       <div
         style={{ display: "flex", justifyContent: "center", height: "100%" }}
@@ -118,6 +144,9 @@ function App() {
                   column={column}
                   columnId={columnId}
                   type={column.type}
+                  columns={columns}
+                  setColumns={setColumns}
+                  payToStore={countCash}
                 />
               );
             })}

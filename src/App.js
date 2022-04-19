@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import Person from "./classes/person/Person";
+import Board from "./classes/person/Board";
 import PetsList from "./classes/PetsList";
 import ProductsList from "./classes/ProductsList";
 import { columnsMock } from "./mocks/mocks";
@@ -9,11 +9,16 @@ import AddPersonBlock from "./classes/person/addPerson";
 import "./App.css";
 import Cash from "./classes/Cash";
 import { DragDrop, DropFood } from "./classes/DragDrop";
+import Person from "./classes/person/Person";
 
 function App() {
   const [columns, setColumns] = useState(columnsMock);
   const [name, setName] = useState(null);
-
+  //delete person
+  //delete from product whenb it bought
+  //card petshop
+  //category of food
+  //karta nahore cash pobocka
   const onDragEnd = (result, columns, setColumns) => {
     if (!result.destination) return;
     const { source, destination } = result;

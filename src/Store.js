@@ -4,7 +4,6 @@ import Product from "./classes/Product";
 import AddPersonBlock from "./classes/person/addPerson";
 import "./App.css";
 import Person from "./classes/person/Person";
-import Pet from "./classes/Pet";
 import Cash from "./classes/Cash";
 
 function Store({ cash, setCash, columnsMock, index }) {

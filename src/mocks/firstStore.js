@@ -10,7 +10,7 @@ const productsMock = [
 
 export const columnsMockFirst = {
   [uuid()]: {
-    name: "Product",
+    name: "Products List",
     type: "product",
     items: productsMock,
   },

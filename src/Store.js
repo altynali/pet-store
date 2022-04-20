@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import PetsList from "./classes/PetsList";
-import ProductsList from "./classes/ProductsList";
+import Product from "./classes/Product";
 import AddPersonBlock from "./classes/person/addPerson";
 import "./App.css";
-import Cash from "./classes/Cash";
 import Person from "./classes/person/Person";
+import Pet from "./classes/Pet";
+import Cash from "./classes/Cash";
 
-function Store({ cash, setCash, columnsMock }) {
+function Store({ cash, setCash, columnsMock, index }) {
   const [columns, setColumns] = useState(columnsMock);
+  const [localCash, setLocalCash] = useState(0);
+
   //delete person
   //delete from product whenb it bought
   //make then every array new for every store
   //karta nahore cash pobocka
-  console.log(columns);
   const onDragEnd = (result, columns, setColumns) => {
     if (!result.destination) return;
     const { source, destination } = result;
@@ -74,6 +75,16 @@ function Store({ cash, setCash, columnsMock }) {
     });
   };
 
+  const decrementPerson = (columnId) => {
+    const newColumns = { ...columns };
+
+    delete newColumns[columnId];
+
+    setColumns({
+      ...newColumns,
+    });
+  };
+
   const countCash = (id) => {
     let count = 0;
 
@@ -93,12 +104,47 @@ function Store({ cash, setCash, columnsMock }) {
         total: 0,
       },
     });
+    countStoreEarnings(id);
 
     alert(`Thank you, ${thisColumn.name}!`);
   };
 
+  const countStoreEarnings = (id) => {
+    let count = 0;
+
+    const thisColumn = columns[id];
+    count = localCash + thisColumn.total;
+
+    thisColumn.items.forEach((element) => {
+      element.isDragDisabled = true;
+      element.price = 0;
+    });
+
+    setLocalCash(count);
+    setColumns({
+      ...columns,
+      [id]: {
+        ...thisColumn,
+        total: 0,
+      },
+    });
+  };
+
   return (
     <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          height: "100%",
+          alignItems: "center",
+          border: "1px solid",
+          margin: `40px 0`,
+        }}
+      >
+        <h2>#{index + 1} store</h2>
+        <Cash text="Earnings:" cash={localCash} />
+      </div>
       <div
         style={{
           display: "flex",
@@ -117,18 +163,8 @@ function Store({ cash, setCash, columnsMock }) {
         >
           <div className="grid">
             {Object.entries(columns).map(([columnId, column], index) => {
-              return column.type === "pet" ? (
-                <PetsList
-                  key={index}
-                  column={column}
-                  columnId={columnId}
-                  type={column.type}
-                  decrement={decrement}
-                  columns={columns}
-                  setColumns={setColumns}
-                />
-              ) : column.type === "product" ? (
-                <ProductsList
+              return column.type === "product" ? (
+                <Product
                   key={index}
                   column={column}
                   columnId={columnId}
@@ -144,6 +180,7 @@ function Store({ cash, setCash, columnsMock }) {
                   columnId={columnId}
                   type={column.type}
                   columns={columns}
+                  decrement={decrementPerson}
                   setColumns={setColumns}
                   payToStore={countCash}
                 />
@@ -152,10 +189,20 @@ function Store({ cash, setCash, columnsMock }) {
           </div>
         </DragDropContext>
       </div>
-
-      {/* <DragDrop /> */}
     </>
   );
 }
 
 export default Store;
+
+// column.type === "pet" ? (
+//   <Pet
+//     key={index}
+//     column={column}
+//     columnId={columnId}
+//     type={column.type}
+//     decrement={decrement}
+//     columns={columns}
+//     setColumns={setColumns}
+//   />
+// ) :

@@ -1,28 +1,16 @@
 import React, { useState } from "react";
 import "../App.css";
-import Board from "./person/Board";
 import { v4 as uuid } from "uuid";
+import Board from "./board/Board";
 
-function ProductsList({
-  column,
-  columnId,
-  decrement,
-  type,
-  columns,
-  setColumns,
-}) {
+function Pet({ column, columnId, decrement, type, columns, setColumns }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  const incrementProduct = () => {
+  const incrementPet = () => {
     const thisItems = [...column.items];
 
-    thisItems.push({
-      id: uuid(),
-      content: name,
-      price: parseInt(price),
-      type: "product",
-    });
+    thisItems.push({ id: uuid(), content: name, price: price, type: "pet" });
 
     setColumns({
       ...columns,
@@ -63,7 +51,7 @@ function ProductsList({
           value={price}
           onChange={(e) => handlePrice(e.target.value)}
         />
-        <button className="button" onClick={incrementProduct}>
+        <button className="button" onClick={incrementPet}>
           add
         </button>
       </div>
@@ -71,4 +59,4 @@ function ProductsList({
   );
 }
 
-export default ProductsList;
+export default Pet;

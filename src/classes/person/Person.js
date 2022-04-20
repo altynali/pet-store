@@ -1,8 +1,6 @@
 import React, { Children } from "react";
-import { Droppable } from "react-beautiful-dnd";
-import BoardBlock from "../BoardBlock";
 import "../../App.css";
-import Board from "./Board";
+import Board from "../board/Board";
 
 export default function Person({
   columnId,
@@ -24,6 +22,11 @@ export default function Person({
       payToStore={payToStore}
     >
       total: {column.total || 0}
+      <div>
+        <span onClick={() => decrement(columnId)} className="button">
+          🗑
+        </span>
+      </div>
       <button className="button" onClick={() => payToStore(columnId)}>
         pay
       </button>

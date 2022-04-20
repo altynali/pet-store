@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import "../App.css";
-import Board from "./person/Board";
+import Board from "./board/Board";
 import { v4 as uuid } from "uuid";
 
-function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
+function Product({ column, columnId, decrement, type, columns, setColumns }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  const incrementPet = () => {
+  const incrementProduct = () => {
     const thisItems = [...column.items];
 
-    thisItems.push({ id: uuid(), content: name, price: price, type: "pet" });
+    thisItems.push({
+      id: uuid(),
+      content: name,
+      price: parseInt(price),
+      type: "product",
+    });
 
     setColumns({
       ...columns,
@@ -51,7 +56,7 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
           value={price}
           onChange={(e) => handlePrice(e.target.value)}
         />
-        <button className="button" onClick={incrementPet}>
+        <button className="button" onClick={incrementProduct}>
           add
         </button>
       </div>
@@ -59,4 +64,4 @@ function PetsList({ column, columnId, decrement, type, columns, setColumns }) {
   );
 }
 
-export default PetsList;
+export default Product;

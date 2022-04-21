@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 import BoardBlock from "./BoardBlock";
 import "../../App.css";
@@ -11,7 +11,6 @@ export default function Board({
   children,
   columns,
   setColumns,
-  payToStore,
 }) {
   return (
     <div

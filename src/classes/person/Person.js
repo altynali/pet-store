@@ -6,12 +6,21 @@ export default function Person({
   columnId,
   column,
   type,
-  decrement,
   children,
   columns,
   setColumns,
   payToStore,
 }) {
+  const decrement = (columnId) => {
+    const newColumns = { ...columns };
+
+    delete newColumns[columnId];
+
+    setColumns({
+      ...newColumns,
+    });
+  };
+
   return (
     <Board
       column={column}
@@ -19,7 +28,6 @@ export default function Person({
       type={column.type}
       columns={columns}
       setColumns={setColumns}
-      payToStore={payToStore}
     >
       total: {column.total || 0}
       <div>

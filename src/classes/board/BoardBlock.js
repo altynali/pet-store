@@ -1,16 +1,7 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 
-export default function BoardBlock({
-  item,
-  index,
-  type,
-  decrement,
-  column,
-  columnId,
-  columns,
-  setColumns,
-}) {
+export default function BoardBlock({ item, index, decrement, columnId }) {
   return (
     <Draggable
       key={item.id}
@@ -40,10 +31,8 @@ export default function BoardBlock({
               <div>
                 {item.content} <br />
                 {item.price !== 0 && `Price: ${item.price}`}
-                {/* {item.type === "pet" && type === "person" && <input />} */}
               </div>
 
-              {/* {type !== "product" && type !== "pet" && ( */}
               <div>
                 <span
                   onClick={() => decrement(item, columnId)}

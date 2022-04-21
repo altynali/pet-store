@@ -122,7 +122,7 @@ class Store extends Component {
       this.setCash(count);
 
       this.countStoreEarnings(id);
-
+      //zvlast
       alert(`Thank you, ${thisColumn.name}!`);
     };
 

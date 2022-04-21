@@ -2,6 +2,7 @@ import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 import BoardBlock from "./BoardBlock";
 import "../../App.css";
+// import BoardBlock from "../../classVersionsMaybe/BoardBlockClass";
 
 export default function Board({
   columnId,
@@ -22,7 +23,6 @@ export default function Board({
       }}
       key={columnId}
     >
-      <h2>{column?.name}</h2>
       <h3>{column?.email}</h3>
       <div>
         <Droppable droppableId={columnId} key={columnId}>

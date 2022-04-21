@@ -16,9 +16,9 @@ export default class BoardBlock extends Component {
     return (
       <Draggable
         key={this.state.item.id}
-        draggableId={this.state.item.id}
+        draggableId={this.state.item?.id}
         index={this.state.index}
-        isDragDisabled={this.state.item.isDragDisabled || false}
+        isDragDisabled={this.state.item?.isDragDisabled || false}
       >
         {(provided, snapshot) => {
           return (

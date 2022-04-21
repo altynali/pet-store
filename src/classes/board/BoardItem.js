@@ -1,7 +1,7 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 
-export default function BoardBlock({ item, index, decrement, columnId }) {
+export default function BoardItem({ item, index, decrement, columnId }) {
   return (
     <Draggable
       key={item.id}

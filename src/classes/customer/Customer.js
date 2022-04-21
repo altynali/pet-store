@@ -2,11 +2,23 @@ import React from "react";
 import "../../App.css";
 import Board from "../board/Board";
 
-export default function Person({
+/**
+ *
+ * Class represents  customers list.
+ *
+ * @class Customer
+ * @extends Board
+ *
+ * @param {function} payToStore - method that increments cash in store
+ * @property {function} decrement - method for decrement persons that are customers
+ *
+ * @returns html: customers or persons list
+ *
+ */
+
+export default function Customer({
   columnId,
   column,
-  type,
-  children,
   columns,
   setColumns,
   payToStore,

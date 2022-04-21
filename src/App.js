@@ -1,51 +1,47 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Cash from "./classes/Cash";
 import Store from "./Store";
 import { stores } from "./mocks/mocks";
 
-class App extends Component {
-  constructor() {
-    super();
+/**
+ * Represents entire app.
+ * @class App
+ *
+ * @property {number} cash - represents cash in all stores
+ * @property {Array<Object>} stores - array of all stores
+ * @property {function} setCash - cash's setter in all stores
+ *
+ * @returns {html}: section of cash in every store(Cash class) and array of stores(Store class)
+ *
+ */
 
-    this.state = {
-      cash: 0,
-      stores: stores,
-    };
+function App() {
+  const [cash, setCash] = useState(0);
 
-    this.setCash = (cash) => {
-      this.setState((prevState) => ({
-        ...this.state,
-        cash: prevState.cash + cash,
-      }));
-    };
-  }
-
-  render() {
-    return (
-      <>
-        <Cash
-          cash={this.state.cash}
-          text="Cash in all stores:"
-          styles={{
-            display: "flex",
-            justifyContent: "center",
-            border: "1px solid",
-            marginBottom: 60,
-          }}
+  return (
+    <>
+      <Cash
+        cash={cash}
+        text="Cash in all stores:"
+        styles={{
+          display: "flex",
+          justifyContent: "center",
+          border: "1px solid",
+          marginBottom: 60,
+        }}
+      />
+      {stores?.map((storeColumn, i) => (
+        <Store
+          key={i}
+          index={i}
+          cash={cash}
+          setCash={setCash}
+          columnsMock={storeColumn}
         />
-        {this.state.stores.map((storeColumn, i) => (
-          <Store
-            key={i}
-            index={i}
-            cash={this.state.cash}
-            setCash={this.setCash}
-            columns={storeColumn}
-          />
-        ))}
-      </>
-    );
-  }
+      ))}
+    </>
+  );
 }
 
 export default App;

@@ -1,17 +1,32 @@
 import React from "react";
 import { Droppable } from "react-beautiful-dnd";
-import BoardBlock from "./BoardBlock";
+import BoardItem from "./BoardItem";
 import "../../App.css";
-// import BoardBlock from "../../classVersionsMaybe/BoardBlockClass";
+
+/**
+ * Class represents one board. It is area where product can be droped.
+ *
+ * @class Board
+ *
+ * @param {number} columnId - represents particular column's id, unique value
+ * @param {Object} column - represents particular column
+ * @param {string} type - represents type of column(product list's column or customer's column)
+ * @param {any} children - children elements in html
+ * @param {Array<Object>} columns - columns (products list and customers)
+ * @param {function} setColumns - setter for columns in store
+ * @param {function} decrement - method for decrements item in board
+ *
+ * @returns html: droppable area and board's items(products)
+ */
 
 export default function Board({
   columnId,
   column,
   type,
-  decrement,
   children,
   columns,
   setColumns,
+  decrement,
 }) {
   return (
     <div
@@ -23,6 +38,7 @@ export default function Board({
       }}
       key={columnId}
     >
+      <h3>{column?.name}</h3>
       <h3>{column?.email}</h3>
       <div>
         <Droppable droppableId={columnId} key={columnId}>
@@ -42,7 +58,7 @@ export default function Board({
               >
                 {column.items.map((item, index) => {
                   return (
-                    <BoardBlock
+                    <BoardItem
                       item={item}
                       index={index}
                       key={index}

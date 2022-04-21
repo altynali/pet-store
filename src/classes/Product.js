@@ -3,11 +3,29 @@ import "../App.css";
 import Board from "./board/Board";
 import { v4 as uuid } from "uuid";
 
-function Product({ column, columnId, decrement, type, columns, setColumns }) {
+/**
+ *
+ * Class represents products list.
+ *
+ * @class Product
+ * @extends Board
+ *
+ * @property {string} name - name of product, that going to be added
+ * @property {function} setName - name setter
+ * @property {string} price - price of product, that going to be added
+ * @property {function} setPrice - price setter
+ * @property {function} increment - method for increment products
+ * @property {function} decrement - method for decrement  products
+ *
+ * @returns html: product list
+ *
+ */
+
+function Product({ column, columnId, columns, setColumns }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  const incrementProduct = () => {
+  const increment = () => {
     const thisItems = [...column.items];
 
     thisItems.push({
@@ -29,6 +47,23 @@ function Product({ column, columnId, decrement, type, columns, setColumns }) {
     setPrice("");
   };
 
+  const decrement = (item, columnId) => {
+    const thisColumn = columns[columnId];
+    const thisItems = [...thisColumn.items];
+    thisItems.splice(
+      thisItems.findIndex((obj) => obj.id === item.id),
+      1
+    );
+
+    setColumns({
+      ...columns,
+      [columnId]: {
+        ...thisColumn,
+        items: thisItems,
+      },
+    });
+  };
+
   const handlePrice = (value) => {
     const numValue = parseInt(value);
     setPrice(numValue);
@@ -40,6 +75,8 @@ function Product({ column, columnId, decrement, type, columns, setColumns }) {
       columnId={columnId}
       type={column.type}
       decrement={decrement}
+      columns={columns}
+      setColumns={setColumns}
     >
       <div>
         <input
@@ -56,7 +93,7 @@ function Product({ column, columnId, decrement, type, columns, setColumns }) {
           value={price}
           onChange={(e) => handlePrice(e.target.value)}
         />
-        <button className="button" onClick={incrementProduct}>
+        <button className="button" onClick={increment}>
           add
         </button>
       </div>

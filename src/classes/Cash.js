@@ -1,6 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../App.css";
 
+/**
+ *
+ * Class represents cash.
+ *
+ * @class Cash
+ *
+ * @param {number} cash - cash
+ * @param {string} text - text
+ *
+ * @returns html
+ *
+ */
 function Cash({ cash, text, styles }) {
   return (
     <div style={styles}>

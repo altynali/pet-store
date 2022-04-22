@@ -17,7 +17,7 @@ import Cash from "./classes/Cash";
  *
  * @property {number} localCash - earnings of this one store
  * @property {function} setLocalCash - setter for store's earnings
- * @property {Array<Object>} columns - columns (products list and customers)
+ * @property {Array<Object>} columns - columns (products list and customers), value of columns, that was set
  * @property {function} setColumns -  setter for store's columns
  * @property {function} onDragEnd - method for drag and drop functionality
  * @property {function} countCash - method for counting cash in all stores

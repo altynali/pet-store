@@ -72,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### documentation:
 
 index.html in docs folder
+
+### diagram:
+
+in diagram folder

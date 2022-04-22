@@ -28,16 +28,6 @@
               
                 
                 <li><a
-                  href='#app'
-                  class="">
-                  App
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#board'
                   class="">
                   Board
@@ -51,16 +41,6 @@
                   href='#cash'
                   class="">
                   Cash
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#addcustomerblock'
-                  class="">
-                  AddCustomerBlock
                   
                 </a>
                 
@@ -104,90 +84,6 @@
         </div>
       </div>
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='app'>
-      App
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Represents entire app.</p>
-
-    <div class='pre p1 fill-light mt0'>new App(): html</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>cash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-          : represents cash in all stores
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>stores</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
-          : array of all stores
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>setCash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-          : cash's setter in all stores
-
-          
-        </div>
-      
-    </div>
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>html</code>:
-        : section of cash in every store(Cash class) and array of stores(Store class)
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -367,127 +263,6 @@
     </div>
   
 
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        html
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='addcustomerblock'>
-      AddCustomerBlock
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Block for adding person.</p>
-
-    <div class='pre p1 fill-light mt0'>new AddCustomerBlock(columns: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>, setColumns: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>): any</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>columns</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
-	    columns (products list and customers)
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>setColumns</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-	    setter for store's columns
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          : name of person, that going to be added
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>setName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-          : name setter
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>email</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          : email of person, that going to be added
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>setEmail</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-          : email setter
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>increment</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-          : method for increment person
-
-          
-        </div>
-      
-    </div>
   
 
   
@@ -810,7 +585,7 @@
       
         <div class='space-bottom0'>
           <span class='code bold'>columns</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
-          : columns (products list and customers)
+          : columns (products list and customers), value of columns, that was set
 
           
         </div>
